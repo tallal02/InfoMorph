@@ -9,76 +9,86 @@
 
 ## 📘 Introduction
 **InfoMorph** transforms lengthy web articles into concise, engaging video summaries narrated by an AI anchor.  
-It combines **NLP**, **TTS**, and **deepfake video synthesis** to make learning and information consumption faster and more interactive.
+It combines **Natural Language Processing (NLP)**, **Text-to-Speech (TTS)**, and **Deep Learning–based Video Generation** to make information easier to understand, more engaging, and accessible across languages.
+
+By integrating summarization, translation, audio synthesis, and video rendering in one automated workflow, InfoMorph helps users consume complex information quickly and intuitively.
 
 ---
 
 ## 🚨 Problem Statement
-Information overload and clickbait culture make it hard to consume authentic, summarized content.  
-Young users prefer short-form media but lose depth and context.  
-InfoMorph bridges this gap using **AI summarization** and **video narration**.
+In today’s fast-paced digital world, people—especially younger audiences—face **information overload**.  
+They often rely on short-form videos that are convenient but lack depth or accuracy.  
+InfoMorph addresses this by transforming textual content into factually accurate, short multimedia summaries that maintain both engagement and comprehension.
 
 ---
 
 ## 🎯 Scope
 InfoMorph:
-- Scrapes web content from relevant sources.  
-- Summarizes it using NLP and LLMs.  
-- Converts text into natural-sounding audio (English/Urdu).  
-- Generates a talking-head video using the **First Order Motion Model (FOMM)**.  
-- Outputs short 30–120 second video summaries optimized for social media.
+- Scrapes web content from online sources relevant to user topics.  
+- Summarizes text using advanced NLP models.  
+- Translates summaries into multiple languages (English ↔ Urdu).  
+- Converts text into realistic audio narration.  
+- Generates AI-anchored news-style videos using deep learning.  
+
+Each video is between **30–120 seconds**, optimized for easy social media sharing while maintaining informative value.
 
 ---
 
-## 🧩 Modules
+## 🧩 System Modules
 
 | # | Module | Description |
 |---|---------|-------------|
-| 1 | UI/UX Design | Interactive web interface for selecting topics and playing summaries. |
-| 2 | Web Scraping | Asynchronous scraping with domain filtering and robots.txt compliance. |
-| 3 | Summarization | NLP-based summarization using LLM pipelines (Gemini / custom models). |
-| 4 | Translation | Converts English summaries to Urdu with transliteration. |
-| 5 | Text-to-Speech | Uses ElevenLabs or open-source TTS for natural narration. |
-| 6 | Video Generation | AI Anchor creation using the First Order Motion Model. |
-| 7 | Integration | FastAPI backend + Next.js frontend deployment. |
+| 1 | **UI/UX Design** | Interactive frontend for topic selection, playback, and feedback. |
+| 2 | **Web Scraping** | Asynchronous article extraction with domain filtering and robots.txt compliance. |
+| 3 | **Summarization** | Uses LLMs (Pegasus / Gemini) for coherent and concise summarization. |
+| 4 | **Translation** | Implements MarianMT and transliteration for Urdu output. |
+| 5 | **Text-to-Speech (TTS)** | Converts summaries into speech with adjustable playback speed. |
+| 6 | **Video Generation (FOMM)** | Uses First Order Motion Model to animate an AI anchor synchronized with narration. |
+| 7 | **Integration & Deployment** | Combines all modules using FastAPI (backend) and Next.js (frontend). |
 
 ---
 
 ## ⚙️ System Architecture
 
 **N-Layered Architecture:**
-1. Presentation Layer – Frontend interface.  
-2. Business Logic Layer – NLP, TTS, and video generation.  
-3. Persistence Layer – Data management and integration.  
-4. Database Layer – Supabase for feedback and summary storage.
+1. **Presentation Layer:** Next.js frontend handling user interaction.  
+2. **Business Logic Layer:** Core modules for scraping, summarization, translation, and video generation.  
+3. **Persistence Layer:** Handles data access and integration.  
+4. **Database Layer:** Manages stored summaries, feedback, and generated media using Supabase.
+
+This architecture ensures scalability, maintainability, and independent module development.
 
 ---
 
-## 🧰 Tech Stack
+## 🧰 Technology Stack
 
-| Category | Tools |
-|-----------|-------|
-| Frontend | Next.js |
-| Backend | FastAPI (Python) |
-| Database | Supabase |
-| NLP / AI | LLM (Gemini / GPT), langdetect, translate |
-| Scraping | aiohttp, newspaper3k, Google CSE API |
-| TTS | ElevenLabs API |
-| Video | First Order Motion Model (FOMM) |
-| Deployment | Cloudinary (media), Docker/Render (optional) |
+| Category | Tools / Frameworks |
+|-----------|--------------------|
+| **Frontend** | Next.js, TailwindCSS |
+| **Backend** | FastAPI (Python) |
+| **Database** | Supabase |
+| **NLP / AI Models** | Pegasus (Summarization), MarianMT (Translation), Gemini / GPT |
+| **Scraping** | aiohttp, newspaper3k, Google Custom Search API |
+| **Speech Synthesis** | ElevenLabs API / Open-Source TTS |
+| **Video Generation** | First Order Motion Model (FOMM) |
+| **Media Management** | Cloudinary |
+| **Testing** | Pytest, Unit Testing Framework |
+| **Deployment** | Docker / Render / Cloud Infrastructure |
 
 ---
 
 ## 🧪 Testing
-Unit tests were written for:
-- URL collection & filtering  
-- Scraping concurrency  
-- Retry mechanism  
-- Article translation  
-- Text-to-speech  
-- Database feedback storage  
+A suite of **unit tests** was developed to ensure module-level reliability and system integration accuracy.  
+These tests covered:
 
-✅ All tests passed, ensuring stable and performant modules.
+- URL collection & filtering  
+- Asynchronous scraping  
+- Retry mechanisms for unstable connections  
+- Translation validation  
+- Text-to-speech generation  
+- Supabase feedback storage  
+
+All tests passed successfully, ensuring robustness and data consistency across modules.
 
 ---
 
@@ -86,30 +96,39 @@ Unit tests were written for:
 
 | Metric | Result |
 |--------|--------|
-| Summary generation time | ≤ 20 seconds (90% cases) |
+| Summary generation time | ≤ 20 seconds (for ≤1000-word articles) |
 | Video generation time | < 2 minutes |
-| Concurrent users supported | 100+ |
-| Articles processed/hour | 1000 |
-| Uptime | 99.5% |
+| Supported concurrent users | 100+ |
+| Articles processed per hour | 1000+ |
+| System uptime | 99.5% |
 
 ---
 
 ## 🚀 Future Enhancements
-- Multilingual summarization.  
-- User-guided summary focus & tone.  
-- Real-time video generation for live feeds.  
-- Emotion-based AI anchors.  
-- Mobile app with offline playback.
+- **Multilingual Support:** Expand to global languages beyond English and Urdu.  
+- **User-Guided Summarization:** Allow users to adjust tone, length, or focus of summaries.  
+- **Real-Time Streaming:** Generate live AI-narrated summaries from ongoing news feeds.  
+- **Advanced AI Anchors:** Integrate avatars with expressive gestures and diverse voices.  
+- **Mobile & Offline Apps:** Native Android/iOS apps with local caching and offline playback.  
 
 ---
 
-## 👥 Contributors
+## 👥 Individual Contributions
 
-| Name | Role | Major Work |
-|------|------|-------------|
-| **Muhammad Tallal Eatazaz** | Backend & UI | URL filtering, login/signup UI |
-| **Hamza Rehman** | Backend & Frontend | Asynchronous scraping, retry logic |
-| **Ahmad Moazam** | Data Handling | Article filtering, topic selection page |
+### **Muhammad Tallal Eatazaz**
+I worked on the system integration, backend APIs, and user interface. This included setting up the FastAPI backend, building the authentication and topic selection pages, and connecting the web application to the summarization and video generation pipelines. I also implemented the URL filtering and compliance module using the Google Custom Search API and robots.txt parser, ensuring ethical and efficient content collection. Through this work, I learned how to structure modular backends, manage API communication between AI components, and design practical user workflows for AI-driven systems.
+
+---
+
+### **Ahmad Moazam**
+I focused on improving content quality and managing data flow across modules. My work involved cleaning and filtering scraped articles, validating language detection, and ensuring that only relevant English content was passed to the summarization module. I also worked on the frontend interfaces for topic and content selection, coordinating with the backend to provide smooth user interactions. This experience strengthened my understanding of data preprocessing, system reliability, and full-stack collaboration in AI-based software projects.
+
+---
+
+### **Hamza Rehman**
+InfoMorph is a system that takes online news articles and turns them into short multimedia summaries. It combines text summarization, translation, speech synthesis, and video generation to make information easier to follow and more accessible. The project brought together different parts of artificial intelligence — language models, deep learning, and computer vision — in one workflow.
+
+I worked on the data and language modules. This included writing the web-scraping scripts, preparing the text data, and setting up the summarization and translation models. I used **Pegasus** for text summarization and **MarianMT** for translation. I also tested and evaluated the summaries using **ROUGE** and **BLEU** metrics, and helped connect these components into a working system. Through this, I learned how to design and evaluate AI systems that handle real-world text and media, and how to bring together research methods and software development in a practical way.
 
 ---
 
@@ -117,4 +136,5 @@ Unit tests were written for:
 Final Year Project © 2025  
 **National University of Computer and Emerging Sciences (FAST-NUCES), Islamabad**
 
-#Complete Code on the Final Branch
+---
+
