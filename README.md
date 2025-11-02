@@ -113,22 +113,13 @@ All tests passed successfully, ensuring robustness and data consistency across m
 
 ---
 
-## 👥 Individual Contributions
+## 👥 Work Division
 
-### **Muhammad Tallal Eatazaz**
-I worked on the system integration, backend APIs, and user interface. This included setting up the FastAPI backend, building the authentication and topic selection pages, and connecting the web application to the summarization and video generation pipelines. I also implemented the URL filtering and compliance module using the Google Custom Search API and robots.txt parser, ensuring ethical and efficient content collection. Through this work, I learned how to structure modular backends, manage API communication between AI components, and design practical user workflows for AI-driven systems.
-
----
-
-### **Ahmad Moazam**
-I focused on improving content quality and managing data flow across modules. My work involved cleaning and filtering scraped articles, validating language detection, and ensuring that only relevant English content was passed to the summarization module. I also worked on the frontend interfaces for topic and content selection, coordinating with the backend to provide smooth user interactions. This experience strengthened my understanding of data preprocessing, system reliability, and full-stack collaboration in AI-based software projects.
-
----
-
-### **Hamza Rehman**
-InfoMorph is a system that takes online news articles and turns them into short multimedia summaries. It combines text summarization, translation, speech synthesis, and video generation to make information easier to follow and more accessible. The project brought together different parts of artificial intelligence — language models, deep learning, and computer vision — in one workflow.
-
-I worked on the data and language modules. This included writing the web-scraping scripts, preparing the text data, and setting up the summarization and translation models. I used **Pegasus** for text summarization and **MarianMT** for translation. I also tested and evaluated the summaries using **ROUGE** and **BLEU** metrics, and helped connect these components into a working system. Through this, I learned how to design and evaluate AI systems that handle real-world text and media, and how to bring together research methods and software development in a practical way.
+| Name | Focus Area | Key Contributions | Tools / Models Used | Learning Outcomes |
+|------|-------------|------------------|----------------------|-------------------|
+| **Muhammad Tallal Eatazaz** | AI Integration & System Architecture | Focused on integrating AI-driven components and backend infrastructure. Implemented model-serving APIs, data pipelines, and the orchestration of the summarization–speech–video workflow. Worked on deploying AI modules with optimized GPU utilization and asynchronous inference. | **FastAPI**, **PyTorch**, **First Order Motion Model (FOMM)**, **Gemini/GPT APIs**, **Supabase** | Learned to design and deploy scalable deep learning pipelines, integrate multimodal AI systems, and optimize real-time inference for complex workflows. |
+| **Ahmad Moazam** | Data Management & Frontend Integration | Worked on data preprocessing and validation for improved content quality. Implemented modules for filtering and language detection, ensuring only relevant English articles were summarized. Designed and connected topic selection and feedback components between frontend and backend for a seamless experience. | **Next.js**, **Python**, **langdetect**, **aiohttp**, **Supabase** | Gained experience in data reliability engineering, full-stack development, and building interfaces that interact with AI-driven systems. |
+| **Hamza Rehman** | NLP & Multilingual Processing | Developed the data and language processing modules, including web scraping, summarization, and translation. Used **Pegasus** for summarization and **MarianMT** for translation. Evaluated the summaries with **ROUGE** and **BLEU** metrics and integrated these modules into the main pipeline. | **Pegasus**, **MarianMT**, **ROUGE**, **BLEU**, **aiohttp** | Learned to design and evaluate NLP pipelines for real-world applications, integrating research-based models with production-grade systems. |
 
 ---
 
@@ -137,4 +128,3 @@ Final Year Project © 2025
 **National University of Computer and Emerging Sciences (FAST-NUCES), Islamabad**
 
 ---
-
